@@ -16,7 +16,12 @@ export default {
   <TheHeader></TheHeader>
 
   <main>
-    <TheMain></TheMain>
+    <div class="container">
+      
+      <TheMain></TheMain>
+
+    </div>
+
   </main>
 
 </template>

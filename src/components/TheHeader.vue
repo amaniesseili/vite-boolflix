@@ -1,7 +1,5 @@
 <script>
 export default{
-  name:"TheHeader"
-
 
 };
 
@@ -29,8 +27,9 @@ export default{
 header{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 4rem;
-  gap: 3rem;
+  gap: 40rem;
 
 }
 
