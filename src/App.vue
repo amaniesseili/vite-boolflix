@@ -1,13 +1,18 @@
-<script setup>
+<script>
+import TheHeader from './components';
+
 
 export default {
   components:{
-
+    TheHeader
   }
-},
+
+}
 </script>
-hello 
+
 <template>
+  <TheHeader></TheHeader>
+  <main></main>
 
 </template>
 
