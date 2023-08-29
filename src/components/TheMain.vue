@@ -9,11 +9,19 @@ export default {
   },
   data() {
     return{
-      movies:[],
+      // movies:[],
     };
   },
+  props:{
+    movie: {
+      type: Object,
+      required:true, 
+    },
+      
+    },
+  };
   methods:{
-    fetchMovies() {
+   /* fetchMovies() {
       const url= "https://api.themoviedb.org/3/search/movie?api_key=fb4b225de7e28f7a5413be7fe7f8fd78&query=futuro";
 
       axios.get(url).then((response)=>{
@@ -24,7 +32,7 @@ export default {
   },
   mounted() {
     this.fetchMovies();
-  },
+  },*/
 
 };
 
@@ -35,7 +43,7 @@ export default {
   <div class="row">
     <div class="col">
 
-      <div class="card text-bg-dark" v-for="movie in movies" :key="movie.id">
+      <div class="card text-bg-dark" v-for="(movie in movies)" :key="movie.id">
 
         <img :src="movie.poster_path" class="card-img" alt="...">
         <div class="card-img-overlay">

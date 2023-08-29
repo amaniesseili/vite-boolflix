@@ -12,8 +12,6 @@ export default {
 
   data() {
     return{
-      // movies:[]//forse da cancellare 
-      //////////////////////////////////
       api_key: "fb4b225de7e28f7a5413be7fe7f8fd78",
       query:"",
 
@@ -22,14 +20,17 @@ export default {
   methods:{                                                         //creao una funzione per scaricare i dati
     fetchMovies (searchQuery) {
 
-      axios.get("https://api.themoviedb.org/3/search/movie",{
+      axios.get("https://api.themoviedb.org/3/search/movie?api_key=fb4b225de7e28f7a5413be7fe7f8fd78&query=futuro",{
         params:{
           api_key: this.api_key,
           query: this.searchQuery,
         },
       })
-      .then((reso)=>{})
-      .then(err=>{});
+      .then((response)=>{
+        this.Movies = response.data.results;
+        console.log(this.movies)
+      })
+      // .then(err=>{});
 
     }
 
@@ -49,7 +50,7 @@ export default {
   <main>
     <div class="container">
 
-      <TheMain></TheMain>
+      <TheMain :movies="movies"></TheMain>
 
     </div>
 
