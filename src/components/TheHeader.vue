@@ -26,7 +26,7 @@ export default{
       <input type="text" class="form-control" 
           v-model="searchQuery"  @keyup.enter="onEnter"             
           placeholder="Search for movie.." aria-label="Search">
-S
+
       <button class="btn btn-outline-secondary" 
           type="button" @click="onEnter">Search</button>
     </div>

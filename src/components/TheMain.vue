@@ -1,6 +1,7 @@
 <script>
 import axios from "axios";
 import TheCard from "./TheCard.vue";
+// import { store } from "./scss/store.js";
 
 
 export default {
@@ -21,7 +22,7 @@ export default {
     },
   };
   methods:{
-   /* fetchMovies() {
+  /* fetchMovies() {
       const url= "https://api.themoviedb.org/3/search/movie?api_key=fb4b225de7e28f7a5413be7fe7f8fd78&query=futuro";
 
       axios.get(url).then((response)=>{
@@ -34,6 +35,8 @@ export default {
     this.fetchMovies();
   },*/
 
+
+
 };
 
 
@@ -43,14 +46,17 @@ export default {
   <div class="row">
     <div class="col">
 
-      <div class="card text-bg-dark" v-for="(movie in movies)" :key="movie.id">
+      <div class="card text-bg-dark" v-for="movie in movies" :key="movie.id">
 
         <img :src="movie.poster_path" class="card-img" alt="...">
+
         <div class="card-img-overlay">
           <h5 class="card-title">{{ movie.title }}</h5>
-          <h5 class="card-text">{{ movie.original_title }}</h5>
-          <h5 class="card-text"><small>{{ movie.vote_average }}</small></h5>
-          <p class="card-text"><small>{{ movie.overview}}</small></p>
+          <h5 class="card-original-title">{{ movie.original_title }}</h5>
+          <!-- Rating v-for=??"-->
+          <h5 class="card-rating">{{ movie.vote_average }}</h5>
+
+          <p class="card-overview"><small>{{ movie.overview}}</small></p>
         </div>
       
 
