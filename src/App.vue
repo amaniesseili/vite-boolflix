@@ -19,23 +19,18 @@ export default {
 
     };
   },
-  methods:{                                                         //creao una funzione per scaricare i nistri dati
+  methods:{                                                         //creao una funzione per scaricare i dati
     fetchMovies (searchQuery) {
 
       axios.get("https://api.themoviedb.org/3/search/movie",{
         params:{
-          api_key: "fb4b225de7e28f7a5413be7fe7f8fd78",
-          query: searchQuery,
+          api_key: this.api_key,
+          query: this.searchQuery,
         },
       })
       .then((reso)=>{})
       .then(err=>{});
 
-      // const url = "https://api.themoviedb.org/3/search/movie"
-
-      //     axios.get(url).then((response) => {
-      //       then.movies = response.data.results;
-      // });
     }
 
   },
