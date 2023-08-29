@@ -22,12 +22,13 @@ export default{
 
     <h1 class="flex-grow-1">BOOLFLIX</h1>
     <div class="input-group mb-3">
+      
       <input type="text" class="form-control" 
           v-model="searchQuery"              
           placeholder="Search for movie.." aria-label="Search">
 
       <button class="btn btn-outline-secondary" 
-          type="button" @="click="searchQuery" @keyup.enter="onEnter">Search</button>
+          type="button" @click=" searchQuery " @keyup.enter="onEnter">Search</button>
     </div>
     
   </header>
@@ -44,7 +45,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4rem;
+  padding: 2rem;
   gap: 40rem;
 
 }

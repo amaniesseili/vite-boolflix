@@ -14,7 +14,7 @@ export default {
     return{
       // movies:[]//forse da cancellare 
       //////////////////////////////////
-      api_key: "fb4b225de7e28f7a5413be7fe7f8fd78"
+      api_key: "fb4b225de7e28f7a5413be7fe7f8fd78",
       query:"",
 
     };
@@ -24,12 +24,14 @@ export default {
 
       axios.get("https://api.themoviedb.org/3/search/movie",{
         params:{
-          api_key: "fb4b225de7e28f7a5413be7fe7f8fd78"
+          api_key: "fb4b225de7e28f7a5413be7fe7f8fd78",
           query: "searchQuery",
         },
       })
       .then((reso)=>{})
       .then(err=>{});
+
+      const url = "https://api.themoviedb.org/3/search/movie"
 
           axios.get(url).then((response) => {
             then.movies = Response.data.results;
@@ -37,15 +39,7 @@ export default {
       });
       
     }
-    // fetchMovies(){
-    //   const url = "https://api.themoviedb.org/3/search/movie"
 
-    //   axios.get(url).then((response) => {
-    //     then.movies = Response.data.results;
-
-    //   });
-
-    // },
   },
   mounted(){
     this.fetchMovies();
