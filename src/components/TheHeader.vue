@@ -28,7 +28,7 @@ export default{
           placeholder="Search for movie.." aria-label="Search">
 S
       <button class="btn btn-outline-secondary" 
-          type="button" @click="onEnter" >Search</button>
+          type="button" @click="onEnter">Search</button>
     </div>
     
   </header>
