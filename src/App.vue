@@ -31,13 +31,11 @@ export default {
       .then((reso)=>{})
       .then(err=>{});
 
-      const url = "https://api.themoviedb.org/3/search/movie"
+      // const url = "https://api.themoviedb.org/3/search/movie"
 
-          axios.get(url).then((response) => {
-            then.movies = Response.data.results;
-
-      });
-      
+      //     axios.get(url).then((response) => {
+      //       then.movies = response.data.results;
+      // });
     }
 
   },

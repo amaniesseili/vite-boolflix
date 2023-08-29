@@ -45,9 +45,14 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 1rem;
   gap: 40rem;
+  background-color: black;
 
+}
+
+h1{
+  color: white;
 }
 
 
