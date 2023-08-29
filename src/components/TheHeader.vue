@@ -28,7 +28,7 @@ export default{
           placeholder="Search for movie.." aria-label="Search">
 
       <button class="btn btn-outline-secondary" 
-          type="button" @click=" searchQuery " @keyup.enter="onEnter">Search</button>
+          type="button" @click= searchQuery @keyup.enter="onEnter">Search</button>
     </div>
     
   </header>
