@@ -25,7 +25,7 @@ export default {
       axios.get("https://api.themoviedb.org/3/search/movie",{
         params:{
           api_key: "fb4b225de7e28f7a5413be7fe7f8fd78",
-          query: "searchQuery",
+          query: searchQuery,
         },
       })
       .then((reso)=>{})
