@@ -16,9 +16,9 @@ export default {
   props:{
     movie: {
       type: Object,
-      required:true, 
+      required:true,
     },
-      
+
     },
   };
   methods:{
@@ -58,7 +58,12 @@ export default {
 
           <p class="card-overview"><small>{{ movie.overview}}</small></p>
         </div>
-      
+
+        <!-- prova
+        <ul>
+          <li v-for="movie in movies" :key="movie.id">{{ movie.title }}</li>
+        </ul> -->
+
 
         <!-- <img src="..." class="card-img" alt="...">
         <div class="card-img-overlay">
