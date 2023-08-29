@@ -31,7 +31,9 @@ export default {
         this.Movies = response.data.results;
         console.log(this.movies)
       })
-      // .then(err=>{});
+      .then(error=>{
+        console.log("errore durante la chiamata API:", error);
+      });
 
     }
 
