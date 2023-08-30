@@ -57,15 +57,15 @@ export default {
           <!-- ---------------------------------------------------- -->
           <!----  2-  aggiungo un div per mostrare la bandiera del paese -------- -->
           <div>
-            <img :src="getCountryFlag(movie.original-language)" alt="country-flag">
+            <img class="flag" :src="getCountryFlag(movie.original-language)" alt="country-flag">
             {{ movie.original_language }}
           </div>
           <!-- ---------------------------------------------------- -->
           <!--  4- uso il getStarRating permostrare le stelle  Rating  -------------------------------->
-          <h5 class="card-rating star-icon"><i class="fa-solid fa-star" v-for="star in getStarRaiting(movie.vote_average)" :key="star"></i></h5>
+          <span class="card-rating star-icon" v-for="star in getStarRaiting(movie.vote_average)" :key="star"><i class="fa-solid fa-star"> * </i></span>
 
           <!-- ------------------------------------------------- -->
-          <h5 class="card-rating" >{{ movie.vote_average }}</h5>
+          <!-- <h5 class="card-rating" v-for="star in getStarRaiting(movie.vote_average)" :key="star">{{ movie.vote_average }}</h5> -->
 
           <p class="card-overview"><small>{{ movie.overview}}</small></p>
         </div>
@@ -84,6 +84,14 @@ export default {
   min-height: 400px;
   margin-bottom: 1rem;
   border-radius: 0;
+}
+.flag{
+  height: 30px;
+}
+
+.fa-star{
+  font-size: 2rem;
+  color: yellow;
 }
 
 </style>
