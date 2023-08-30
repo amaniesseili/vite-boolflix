@@ -11,7 +11,7 @@ export default {
   },
   data() {
     return{
-      // movies:[],
+    
     };
   },
   props:{
@@ -40,19 +40,33 @@ export default {
     }
     //----------------------------------------------------------------------------------------
   },
+   //------- 6- per aggiungere la cpertina del film faccio una funzione getFullImagePath---
+    /*getFullImagePath(posterPath){
+      
+      return `https://image.tmdb.org/t/p/w342/s2al5ubCNoMud9hLA80KL1qQdxB.jpg`;
+    },*/
+    //---------------------------------------------------------------------------------
   };
 
 </script>
 
 <template>
+
+
+
   <div class="row row-cols-4">
     <div class="col mt-3"  v-for="movie in movies" :key="movie.id">
 
       <div class="card text-bg-dark">
 
-        <img :src="movie.poster_path" class="card-img " alt="...">
+        
 
         <div class="card-img-overlay">
+          
+          <!-- <img :src="getFullImagePath (movie.poster_path)" class="card-img " alt="movie poster">   -->
+
+          <img :src="movie.poster_path" class="card-img " alt="..."> 
+
           <h5 class="card-title">{{ movie.title }}</h5>
           <!-- ---------------------------------------------------- -->
           <!----  2-  aggiungo un div per mostrare la bandiera del paese -------- -->
@@ -61,7 +75,7 @@ export default {
             {{ movie.original_language }}
           </div>
           <!-- ---------------------------------------------------- -->
-          <!--  4- uso il getStarRating permostrare le stelle  Rating  -------------------------------->
+          <!--  4- uso la funzione getStarRating permostrare le stelle  Rating  -------------------------------->
           <span class="card-rating star-icon" v-for="star in getStarRaiting(movie.vote_average)" :key="star"><i class="fa-solid fa-star"> * </i></span>
 
           <!-- ------------------------------------------------- -->
@@ -92,6 +106,10 @@ export default {
 .fa-star{
   font-size: 2rem;
   color: yellow;
+}
+.card-title{
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 </style>

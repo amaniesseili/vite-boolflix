@@ -18,7 +18,8 @@ export default {
       api_key: "fb4b225de7e28f7a5413be7fe7f8fd78",
       query:"",
       movies:[], 
-      mediaType:"tv"
+      mediaType:"tv",
+      showIntro :true   
 
     };
   },
@@ -34,6 +35,7 @@ export default {
       })
       .then((response)=>{
         this.movies = response.data.results;
+        this.showIntro =this.movies.length === 0;
         console.log(this.movies)
       })
       .then(error=>{
@@ -71,6 +73,12 @@ export default {
   <TheHeader @search="fetchMovies"></TheHeader>
 
   <main>
+    <!----------------- presentation intro-------------- -->
+    <div class="intro" v-if="showIntro" >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus vel eligendi ipsum tempora deleniti magnam nam, commodi facilis eos ab nisi cupiditate doloremque. Nobis error impedit vero, quos qui rerum.
+    </div>
+    <!-- ------------------------------------------------ -->
+          
     <div class="container mt-2">
 
       <TheMain :movies="movies"></TheMain>
@@ -82,5 +90,10 @@ export default {
 </template>
 
 <style >
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: color #f7f7f7;
+}
+
 
 </style>

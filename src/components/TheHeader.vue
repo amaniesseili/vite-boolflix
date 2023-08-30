@@ -2,7 +2,7 @@
 export default{
   data(){
     return{
-      searchQuery: "",  
+      searchQuery: "", 
     };
   },
   methods:{
@@ -20,6 +20,7 @@ export default{
 <template>
   <header >
 
+
     <h1 class="flex-grow-1">BOOLFLIX</h1>
     <div class="input-group mb-3">
       
@@ -28,15 +29,10 @@ export default{
           placeholder="Search for movie.." aria-label="Search">
 
       <button class="btn btn-outline-secondary" 
-          type="button" @click="onEnter">Search</button>
+          type="button my-btn" @click="onEnter">Search</button>
     </div>
     
   </header>
-
-
-
-
-
 </template>
 
 
@@ -47,13 +43,14 @@ header{
   justify-content: space-between;
   padding: 1rem;
   gap: 40rem;
-  background-color: black;
-
+  background-color:black;
+  text-align: center;
 }
 
 h1{
   color: white;
 }
+
 
 
 </style>
