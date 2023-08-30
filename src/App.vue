@@ -54,15 +54,16 @@ export default {
         console.log(this.movies)
       })
       .then(error=>{
-        console.log("errore durante la chiamata API:", error);
+        console.log("errore durante il recupero dei media:", error);
     })
+  }
   },
 
   //-------------------------------------------------------------
   mounted(){
     this.fetchMovies();
   },
-},
+};
 </script>
 
 <template>
