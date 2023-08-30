@@ -1,7 +1,7 @@
 <script>
 import axios from "axios";
 import TheCard from "./TheCard.vue";
-import TheMain from "./TheMain.vue";
+
 // import { store } from "./scss/store.js";
 
 
@@ -33,6 +33,12 @@ export default {
     },
     
     //---------------------------------------------------------------------------------
+    //-------- 3-per convertire il voto in stelle -> funzione per calcolare il num delle stelle -> template
+    getStarRaiting(voteAverage){
+      const rating = Math.ceil(voteAverage / 2);  // per trasformare a scala 1-5
+      return rating; 
+    }
+    //----------------------------------------------------------------------------------------
   },
   };
 
@@ -55,9 +61,12 @@ export default {
             {{ movie.original_language }}
           </div>
           <!-- ---------------------------------------------------- -->
-          <h5 class="card-original-title">{{ movie.original_title }}</h5>
-          <!-- Rating v-for=??"-->
-          <h5 class="card-rating">{{ movie.vote_average }}</h5>
+          <!-- <h5 class="card-original-title">{{ movie.original_title }}</h5> -->
+          <!--4- uso il getStarRating permostrare le stelle  Rating-------------------------------->
+          <h5 class="card-rating star-icon" v-for="star in getStarRaiting(movie.vote_average)" :key="star"><i class="fa-solid fa-star"></i></h5>
+
+          <!-- ------------------------------------------------- -->
+          <h5 class="card-rating" >{{ movie.vote_average }}</h5>
 
           <p class="card-overview"><small>{{ movie.overview}}</small></p>
         </div>
