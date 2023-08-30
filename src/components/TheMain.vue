@@ -22,7 +22,7 @@ export default {
 
     },
     methods:{
-    //--------- per avere la bandiera faccio la funzione getCountryflag-------------------
+    //--------- 1- per avere la bandiera faccio la funzione getCountryflag-------------------
     getCountryFlag(language){
       const languageToCountry ={
         en:"us"
@@ -49,7 +49,7 @@ export default {
         <div class="card-img-overlay">
           <h5 class="card-title">{{ movie.title }}</h5>
           <!-- ---------------------------------------------------- -->
-          <!-- aggiungo un div per mostrare la bandiera del paese -->
+          <!--2-  aggiungo un div per mostrare la bandiera del paese -->
           <div>
             <img :src="getCountryFlag(movie.original-language)" alt="country-flag">
             {{ movie.original_language }}
@@ -61,19 +61,6 @@ export default {
 
           <p class="card-overview"><small>{{ movie.overview}}</small></p>
         </div>
-
-        <!-- prova
-        <ul>
-          <li v-for="movie in movies" :key="movie.id">{{ movie.title }}</li>
-        </ul> -->
-
-
-        <!-- <img src="..." class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small>Last updated 3 mins ago</small></p>
-        </div> -->
 
       </div>
     </div>
