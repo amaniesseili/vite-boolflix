@@ -55,15 +55,14 @@ export default {
         <div class="card-img-overlay">
           <h5 class="card-title">{{ movie.title }}</h5>
           <!-- ---------------------------------------------------- -->
-          <!--2-  aggiungo un div per mostrare la bandiera del paese -->
+          <!----  2-  aggiungo un div per mostrare la bandiera del paese -------- -->
           <div>
             <img :src="getCountryFlag(movie.original-language)" alt="country-flag">
             {{ movie.original_language }}
           </div>
           <!-- ---------------------------------------------------- -->
-          <!-- <h5 class="card-original-title">{{ movie.original_title }}</h5> -->
-          <!--4- uso il getStarRating permostrare le stelle  Rating-------------------------------->
-          <h5 class="card-rating star-icon" v-for="star in getStarRaiting(movie.vote_average)" :key="star"><i class="fa-solid fa-star"></i></h5>
+          <!--  4- uso il getStarRating permostrare le stelle  Rating  -------------------------------->
+          <h5 class="card-rating star-icon"><i class="fa-solid fa-star" v-for="star in getStarRaiting(movie.vote_average)" :key="star"></i></h5>
 
           <!-- ------------------------------------------------- -->
           <h5 class="card-rating" >{{ movie.vote_average }}</h5>
