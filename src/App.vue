@@ -52,7 +52,7 @@ export default {
   <TheHeader @search="fetchMovies"></TheHeader>
 
   <main>
-    <div class="container">
+    <div class="container mt-2">
 
       <TheMain :movies="movies"></TheMain>
 
