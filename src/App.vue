@@ -75,10 +75,18 @@ export default {
   <main>
     <!----------------- presentation intro-------------- -->
     <div class="intro" v-if="showIntro" >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus vel eligendi ipsum tempora deleniti magnam nam, commodi facilis eos ab nisi cupiditate doloremque. Nobis error impedit vero, quos qui rerum.
+      <div class="row">
+        <div class="col-3 ms-5 me-5 description">
+          <h3>Boolflix</h3>
+          <p>Scopri mondi incantanti e avventure e avventure senza fine con BoolFlix: dove ogni schermo è una finestra verso l'infinito.Dalle epiche avventure alle scoperte segrete, preparati a immergerti nel magico mondo Del cinema come mai prima d'ora!</p>
+        </div>
+        <div class="col-3 slogan">
+          <h1 class="title-slogan"><b>OLTRE LO <br> SCHERMO </b></h1>
+
+        </div>
+      </div>
     </div>
-    <!-- ------------------------------------------------ -->
-          
+    <!-- ------------------------------------------------ -->        
     <div class="container mt-2">
 
       <TheMain :movies="movies"></TheMain>
@@ -87,12 +95,33 @@ export default {
 
   </main>
 
+
+
 </template>
 
 <style >
-body{
+
+.intro{
+  width: 100%;
+  height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-  background: color #f7f7f7;
+  background-image: url(../public/boolflix-bg-2.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+} 
+
+.slogan{
+  margin-top: 600px;
+
+}
+  
+.title-slogan{
+  font-size: 60px;
+}
+.description{
+  margin-top: 150px;
+  
 }
 
 
