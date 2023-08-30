@@ -15,7 +15,7 @@ export default {
     return{
       api_key: "fb4b225de7e28f7a5413be7fe7f8fd78",
       query:"",
-      // movies:[], devo salvare i dati dei film qua ??
+      movies:[], 
 
     };
   },
@@ -25,11 +25,11 @@ export default {
       axios.get("https://api.themoviedb.org/3/search/movie",{
         params:{
           api_key: this.api_key,
-          query: this.searchQuery,
+          query: searchQuery,
         },
       })
       .then((response)=>{
-        this.Movies = response.data.results;
+        this.movies = response.data.results;
         console.log(this.movies)
       })
       .then(error=>{

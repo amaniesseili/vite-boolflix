@@ -5,6 +5,8 @@ export const store = reactive({
   movies: [],
   api_key: "fb4b225de7e28f7a5413be7fe7f8fd78",
   query: '',
+  
+
 
 
   

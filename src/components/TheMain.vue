@@ -14,7 +14,7 @@ export default {
     };
   },
   props:{
-    movie: {
+    movies: {
       type: Object,
       required:true,
     },
@@ -43,12 +43,12 @@ export default {
 </script>
 
 <template>
-  <div class="row">
-    <div class="col">
+  <div class="row row-cols-4">
+    <div class="col mt-1"  v-for="movie in movies" :key="movie.id">
 
-      <div class="card text-bg-dark" v-for="movie in movies" :key="movie.id">
+      <div class="card text-bg-dark">
 
-        <img :src="movie.poster_path" class="card-img" alt="...">
+        <img :src="movie.poster_path" class="card-img " alt="...">
 
         <div class="card-img-overlay">
           <h5 class="card-title">{{ movie.title }}</h5>
@@ -82,5 +82,10 @@ export default {
 
 
 <style lang="scss" scoped>
+.card{
+  min-height: 400px;
+  margin-bottom: 2rem;
+  border-radius: 0;
+}
 
 </style>
