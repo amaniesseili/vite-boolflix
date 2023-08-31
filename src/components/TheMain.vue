@@ -37,15 +37,16 @@ export default {
     getStarRaiting(voteAverage){
       const rating = Math.ceil(voteAverage / 2);  // per trasformare a scala 1-5
       return rating; 
-    }
+    },
     //----------------------------------------------------------------------------------------
-  },
-   //------- 6- per aggiungere la cpertina del film faccio una funzione getFullImagePath---
-    /*getFullImagePath(posterPath){
+      //------- 6- per aggiungere la cpertina del film faccio una funzione getFullImagePath---
+    getFullImagePath(posterPath){
       
-      return `https://image.tmdb.org/t/p/w342/s2al5ubCNoMud9hLA80KL1qQdxB.jpg`;
-    },*/
+      return `https://image.tmdb.org/t/p/w342/${posterPath}`;
+    },
     //---------------------------------------------------------------------------------
+  },
+
   };
 
 </script>
@@ -57,21 +58,17 @@ export default {
   <div class="row row-cols-4">
     <div class="col mt-3"  v-for="movie in movies" :key="movie.id">
 
-      <div class="card text-bg-dark">
+      <div class="card text-bg-dark h-100">
 
-        
-
-        <div class="card-img-overlay">
-          
-          <!-- <img :src="getFullImagePath (movie.poster_path)" class="card-img " alt="movie poster">   -->
-
-          <img :src="movie.poster_path" class="card-img " alt="..."> 
+        <img :src="getFullImagePath (movie.poster_path)" class="card-img " alt="movie poster"> 
+        <div class="card-img-overlay" >
+          <!-- <img :src="movie.poster_path" class="card-img " alt="...">  -->
 
           <h5 class="card-title">{{ movie.title }}</h5>
           <!-- ---------------------------------------------------- -->
           <!----  2-  aggiungo un div per mostrare la bandiera del paese -------- -->
           <div>
-            <img class="flag" :src="getCountryFlag(movie.original-language)" alt="country-flag">
+            <img class="flag" :src="getCountryFlag(movie.original_language)" alt="country-flag">
             {{ movie.original_language }}
           </div>
           <!-- ---------------------------------------------------- -->
@@ -94,6 +91,7 @@ export default {
 
 
 <style lang="scss" scoped>
+
 .card{
   min-height: 400px;
   margin-bottom: 1rem;
@@ -110,6 +108,17 @@ export default {
 .card-title{
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+.card-img-overlay{
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease
+  
+}
+.card:hover .card-img-overlay {
+  opacity: 1;
 }
 
 
