@@ -103,7 +103,7 @@ export default {
 
 .intro{
   width: 100%;
-  height: calc(100wh - 100px);
+  height: calc(100vh - 100px);
   font-family: Arial, Helvetica, sans-serif;
   background-image: url(../public/boolflix-bg-2.jpg);
   background-size:cover;
@@ -112,7 +112,7 @@ export default {
 } 
 
 .slogan{
-  margin-top: 600px;
+  margin-top: 700px;
 
 }
   

@@ -24,12 +24,24 @@ export default {
     methods:{
     //--------- 1- per avere la bandiera faccio la funzione getCountryflag-------------------
     getCountryFlag(language){
+      let country = language.toUpperCase()
+
+      switch (language) {
+        case "en":
+          country = "US"
+          break;
+      
+
+        default:
+          break;
+      }
+
       const languageToCountry ={
         en:"us"
       };
       const countryCode = languageToCountry[language] ;
-      return`https://flagsapi.com/BE/flat/64.png`;
-      // return`https://flagsapi.com/${langFlat.toUperCase()}/flat/64.png`;
+      // return`https://flagsapi.com/BE/flat/64.png`;
+      return`https://flagsapi.com/${country}/flat/64.png`;
     },
     
     //---------------------------------------------------------------------------------
@@ -93,8 +105,7 @@ export default {
 <style lang="scss" scoped>
 
 .card{
-  min-height: 400px;
-  margin-bottom: 1rem;
+  min-height: 200px;
   border-radius: 0;
 }
 .flag{
